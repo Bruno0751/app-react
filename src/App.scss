@@ -1,0 +1,12 @@
+$body-background-color: rgb(129, 113, 113);
+
+html, body {
+  width: 100%;
+
+  body {
+    margin: 0;
+    // display: flex;
+    padding: 0;
+    background-color: $body-background-color;
+  }
+}
