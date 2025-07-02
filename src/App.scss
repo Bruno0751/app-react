@@ -1,12 +1,18 @@
 $body-background-color: rgb(129, 113, 113);
+$backgroubd: 	#F8F9FA;
+$backgroud-magem: "https://picsum.photos/2000";
+
 
 html, body {
   width: 100%;
 
   body {
     margin: 0;
-    // display: flex;
     padding: 0;
-    background-color: $body-background-color;
+    background: #12b098;
+    background: linear-gradient(90deg,rgba(18, 176, 152, 1) 0%, rgba(37, 77, 219, 1) 48%, rgba(213, 101, 219, 1) 100%);
+    // background-color: $backgroubd;
+    // background-image: url($backgroud-magem);
+    // background-repeat: no-repeat;
   }
 }
