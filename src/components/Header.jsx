@@ -13,16 +13,6 @@ export default function Header() {
           </Link>
         </header>
         <Nav />
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/find">Buscar</Link>
-            </li>
-            <li>
-              <Link to="/insert">Inserir</Link>
-            </li>
-          </ul>
-        </nav> */}
       </div>
     </>
   );

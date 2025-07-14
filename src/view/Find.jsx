@@ -1,39 +1,27 @@
 import './../style/Sass.scss'
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import usePages from './hook/usePages';
 
 export default function Find() {
-    const [fregueses, setFregueses] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        axios.get('http://localhost:9091/v1/fregues')
-            .then(response => {
-                setFregueses(response.data);
-                setLoading(false);
-            })
-            .catch(error => {
-                console.error('Erro ao buscar fregueses:', error);
-                setLoading(false);
-            });
-    }, []);
-
-    if (loading) {
+    const hooks = usePages();
+    if (hooks.loading) {
         return <p>Carregando...</p>;
     }
-
     return (
         <>
             <div>
                 <h2>Lista de Usuários</h2>
+                {/* <button onClick={() => showAlertMessage('error', 'Erro ao buscar fregueses')}>Mostrar Notyf</button> */}
                 <ul>
-                    {fregueses.map(obj => (
+                    {hooks.fregueses.map(obj => (
                         <li key={obj.id}>
                             {obj.name} ({obj.email})
                         </li>
                     ))}
                 </ul>
             </div>
+            <ToastContainer />
         </>
     )
 }
